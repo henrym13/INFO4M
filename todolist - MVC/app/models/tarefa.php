@@ -34,16 +34,4 @@ class Tarefas{
         return $tarefas;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

@@ -10,11 +10,11 @@ class TarefaController{
     }
 
     public function criar(){
-        if(isset($_POST['descricao']) && !empty(trim($_POST['$descricao']))){
+        if(isset($_POST['descricao']) && !empty(trim($_POST['descricao']))){
             $this->tarefaModel->criar($_POST['descricao']);
         }
 
-        header("location: index.php");
+        header("Location: index.php");
     }
 
     public function excluir(){
@@ -22,7 +22,7 @@ class TarefaController{
             $this->tarefaModel->excluir($_GET['delete']);
         }
 
-        header('location: index.php');
+        header('Location: index.php');
     }
 
     public function index(){
