@@ -18,8 +18,8 @@ class TarefaController{
     }
 
     public function excluir(){
-        if(isset($_GET['delete'])){
-            $this->tarefaModel->excluir($_GET['delete']);
+        if(isset($_GET['id'])){
+            $this->tarefaModel->excluir($_GET['id']);
         }
 
         header('Location: index.php');
@@ -28,6 +28,14 @@ class TarefaController{
     public function index(){
         $tarefas = $this->tarefaModel->listar();
         include __DIR__ .'/../views/listar.php';
+    }
+
+    public function editar(){
+        if(isset($_POST['descricao']) && !empty(trim($_POST['descricao'])) && isset($_POST['id'])){
+            $this->tarefaModel->editar($_POST['descricao'], $_POST['id']);
+        }
+
+        header('Location: index.php');
     }
 }
 
